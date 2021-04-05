@@ -84,7 +84,7 @@ class Build : NukeBuild
             .SetOutputDirectory(ArtifactsDirectory)
             .SetProject(Solution)));
 
-    Target Publish => _ => _
+    Target NugetPublish => _ => _
         .Requires(
             () => !string.IsNullOrWhiteSpace(ApiKeyEnv) &&
                   !string.IsNullOrWhiteSpace(SourceEnv) &&
